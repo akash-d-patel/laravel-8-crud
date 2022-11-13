@@ -22,14 +22,23 @@
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
+                <strong>Name<span class="text-danger">*</span></strong>
                 <input type="text" name="name" class="form-control" placeholder="Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
+                <strong>Description<span class="text-danger">*</span></strong>
                 <textarea class="form-control" style="height:150px" name="description" placeholder="Description"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong for="status">Status</strong>
+                <select class="form-control" id="status" name="status">
+                <option>Active</option>
+                <option>Inactive</option>
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-left">

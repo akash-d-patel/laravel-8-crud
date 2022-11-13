@@ -20,6 +20,7 @@
             <th>No</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Status</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($brands as $brand)
@@ -27,6 +28,7 @@
             <td>{{ $brand->id }}</td>
             <td>{{ $brand->name }}</td>
             <td>{{ $brand->description }}</td>
+            <td>{{ $brand->status }}</td>
             <td>
                 <form action="{{ route('brands.destroy',$brand->id) }}" method="POST">
                     <a class="btn btn-primary" href="{{ route('brands.edit',$brand->id) }}">Edit</a>

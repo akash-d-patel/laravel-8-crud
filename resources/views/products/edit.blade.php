@@ -23,14 +23,38 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Name:</strong>
+                    <strong for="brand_id">Product</strong>
+                    <select class="form-control" id="brand_id" name="brand_id">
+                    <option value=" ">---Select Brand---</option>
+                    @foreach($brands as $key => $brand)
+                    @if ($brand->id == $product->brand_id)
+                    <option value="{{ $brand->id }}" selected> {{ $brand->name}} </option>
+                    @else
+                    <option value="{{ $brand->id }}"> {{ $brand->name}} </option>
+                    @endif
+                    @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Name<span class="text-danger">*</span></strong>
                     <input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Description:</strong>
+                    <strong>Description<span class="text-danger">*</span></strong>
                     <textarea class="form-control" style="height:150px" name="description" placeholder="Description">{{ $product->description }}</textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong for="status">Status</strong>
+                    <select class="form-control" id="status" name="status">
+                    <option value="Active" @if($product->status == 'Active') selected="selected" @endif>Active</option>
+                    <option value="Inactive" @if($product->status == 'Inactive') selected="selected" @endif>Inactive</option>
+                    </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-left">

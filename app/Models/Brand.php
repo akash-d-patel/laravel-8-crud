@@ -9,6 +9,6 @@ class Brand extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'description'
+        'name', 'description', 'status'
     ];
 }

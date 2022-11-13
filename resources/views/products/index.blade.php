@@ -20,6 +20,7 @@
             <th>No</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Status</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($products as $product)
@@ -27,6 +28,7 @@
             <td>{{ $product->id }}</td>
             <td>{{ $product->name }}</td>
             <td>{{ $product->description }}</td>
+            <td>{{ $product->status }}</td>
             <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                     <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>

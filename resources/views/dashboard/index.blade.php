@@ -7,6 +7,9 @@
             <div class="card">
                 <h1 style="text-align:center">Dashboard</h1>
                 <div>
+                    <button type="reset" onclick="window.location.href='{{ route('users.index') }}'" class="btn btn-light-primary">Users</button>
+                </div><br>
+                <div>
                     <button type="reset" onclick="window.location.href='{{ route('brands.index') }}'" class="btn btn-light-primary">Brands</button>
                 </div><br>
                 <div>

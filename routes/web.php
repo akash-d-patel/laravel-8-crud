@@ -27,5 +27,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('dashboard', 'DashboardController@index');
     Route::resource('brands', BrandController::class);
     Route::resource('products', ProductController::class);
+    Route::resource('users', UserController::class);
 
 });

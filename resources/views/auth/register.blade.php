@@ -61,6 +61,36 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <div id="gender-group" class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
+                                <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                                <div class="col-md-6">
+                                    <div><input id="male" type="radio" class="form-control" name="gender" value="Male"> {{ (old('sex') == 'male') ? 'checked' : '' }} >Male</div>
+                                    <div><input id="female" type="radio" class="form-control" name="gender" value="Female"> {{ (old('sex') == 'female') ? 'checked' : '' }} >Female</div>
+                                    @error('gender')
+                                    <span class="help-block">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Birthday') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="birthday" type="date" class="form-control @error('birthday') is-invalid @enderror" name="birthday" value="{{ old('birthday') }}" required autocomplete="birthday" autofocus>
+
+                                @error('birthday')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
